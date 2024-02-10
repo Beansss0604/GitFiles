@@ -2,6 +2,7 @@
 //BSIT-TG-1-1
 //Programming Constructs
 //Main Menu(Sequence, Selection, Loop)
+//Pangturbo C++ pa to 
 
 #include <iostream.h>
 #include <conio.h>
