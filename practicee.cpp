@@ -1,30 +1,27 @@
 #include <iostream>
+#include <string>
+#include <algorithm>
 using namespace std;
 
-int main () {
+//find the largest number in array 
 
-    int rows;
-    int columns;
-    char symbol;
+int find_largest(int num[], int n) {
+    return *max_element(num, num + n);
+}
 
-    cout << "How many rows: ";
-    cin >> rows;
+int main() {
 
-    cout << "How many columns: ";
-    cin >> columns;
+    system("cls");
 
-    cout << "Enter a symbol to use: ";
-    cin >> symbol;
+    int num[] = {1, 2, 5, 7, 3};
 
-    system ("cls");
-    
-    for (int i = 1; i <= rows; i++) {
-        for (int j = 1; j <= columns; j++) {
-        cout << symbol;
+    int n = sizeof(num) / sizeof(num[0]);
+    cout << "Original Arrays: " << endl;
+    for (int i = 0; i < n; i++) {
+        cout << num[i] << " ";
     }
-    cout << '\n';
-    }
-    
+
+    cout << "\nThe largest number is: " << endl << find_largest(num, n);
 
     return 0;
 }
