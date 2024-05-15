@@ -15,6 +15,7 @@ using namespace std;
 */
 
 void gotoxy(int x, int y);
+void desReminder();
 void design();
 void Login();
 void desLogin();
@@ -22,17 +23,20 @@ void desRegistration();
 void Register();
 void desForgot();
 void forgotPassword();
+void accFound();
 string getPassword();
 int MainMenu();
 
 int main() {
 
     system("cls");
-    system("color A");
-
-    int choice;
+    system("color B");
 
     design();
+    desReminder();
+
+    int choice;
+    
     gotoxy(45, 9); cout << "------ Iskode: Streamlined Daily Coding Management System ------";
     gotoxy(66, 13); cout << "1 - Login\n";
     gotoxy(66, 14); cout << "2 - Register\n";
@@ -84,6 +88,30 @@ void gotoxy(int x, int y) {
     coordinate.X = x;
     coordinate.Y = y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coordinate);
+}
+
+void desReminder() {
+     gotoxy(0, 0);
+     cout << "MAKE EVERYDAY A PROGRAMMING DAY!";
+     gotoxy(33, 0);
+     cout << "MAKE EVERYDAY A PROGRAMMING DAY!";
+     gotoxy(66, 0);
+     cout << "MAKE EVERYDAY A PROGRAMMING DAY!";
+     gotoxy(99, 0);
+     cout << "MAKE EVERYDAY A PROGRAMMING DAY!";
+     gotoxy(132, 0);
+     cout << "MAKE EVERYDAY A PROGRAMMIN";
+     gotoxy(0, 32);
+     cout << "MAKE EVERYDAY A PROGRAMMING DAY!";
+     gotoxy(0, 65);
+     cout << "MAKE EVERYDAY A PROGRAMMING DAY!";
+     gotoxy(0, 103);
+     cout << "MAKE EVERYDAY A PROGRAMMING DAY!";
+     gotoxy(0, 133);
+     cout << "MAKE EVERYDAY A PROGRAMMING DAY!";
+     gotoxy(0, 166);
+     cout << "MAKE EVERYDAY A PROGRAMMING DA";
+     
 }
 
 void design() {
@@ -403,9 +431,95 @@ void desForgot() {
 
 }
 
+void accFound() {
+    gotoxy(45, 7);
+    cout << "-------------------------------------------------------------------------";
+    gotoxy(44, 8);
+    cout << "[";
+    gotoxy(44, 9);
+    cout << "[";
+    gotoxy(44, 10);
+    cout << "[";
+    gotoxy(44, 11);
+    cout << "[";
+    gotoxy(44, 12);
+    cout << "[";
+    gotoxy(44, 13);
+    cout << "[";
+    gotoxy(44, 14);
+    cout << "[";
+    gotoxy(44, 15);
+    cout << "[";
+    gotoxy(44, 16);
+    cout << "[";
+    gotoxy(44, 17);
+    cout << "[";
+    gotoxy(44, 18);
+    cout << "[";
+    gotoxy(44, 19);
+    cout << "[";
+    gotoxy(44, 20);
+    cout << "[";
+    gotoxy(44, 21);
+    cout << "[";
+    gotoxy(44, 22);
+    cout << "[";
+    gotoxy(44, 23);
+    cout << "[";
+    gotoxy(44, 24);
+    cout << "[";
+    gotoxy(44, 25);
+    cout << "[";
+    gotoxy(45, 11);
+    cout << "  ---------------------------------------------------------------------";
+    gotoxy(45, 16);
+    cout << "  ---------------------------------------------------------------------";
+    gotoxy(45, 22);
+    cout << "  ---------------------------------------------------------------------";
+    gotoxy(118, 8);
+    cout << "]";
+    gotoxy(118, 9);
+    cout << "]";
+    gotoxy(118, 10);
+    cout << "]";
+    gotoxy(118, 11);
+    cout << "]";
+    gotoxy(118, 12);
+    cout << "]";
+    gotoxy(118, 13);
+    cout << "]";
+    gotoxy(118, 14);
+    cout << "]";
+    gotoxy(118, 15);
+    cout << "]";
+    gotoxy(118, 16);
+    cout << "]";
+    gotoxy(118, 17);
+    cout << "]";
+    gotoxy(118, 18);
+    cout << "]";
+    gotoxy(118, 19);
+    cout << "]";
+    gotoxy(118, 20);
+    cout << "]";
+    gotoxy(118, 21);
+    cout << "]";
+    gotoxy(118, 22);
+    cout << "]";
+    gotoxy(118, 23);
+    cout << "]";
+    gotoxy(118, 24);
+    cout << "]";
+    gotoxy(118, 25);
+    cout << "]";
+    gotoxy(45, 26);
+    cout << "-------------------------------------------------------------------------";
+}
+
 void forgotPassword() {
     int forgot;
 
+    system("cls");
     desForgot();
     gotoxy(68, 9); cout << "Password Retrieval";
     gotoxy(66, 13); cout << "1 - Search Id by Username\n";
@@ -414,12 +528,17 @@ void forgotPassword() {
     cin >> forgot;
 
     switch (forgot) {
-        case 1: { 
+        case 1:
+        { 
+            
+            system("cls"); 
             int ct = 0;
             string f_username, f_Id, f_pass;
 
-            cout << "\nEnter the last username inputted: ";
+            accFound();
+            gotoxy(49, 9); cout << "Enter the last username inputted: ";
             cin >> f_username;
+            Sleep(3000);
 
             ifstream forgot("Accounts.txt");
             while (forgot >> f_Id >> f_pass) {
@@ -434,23 +553,26 @@ void forgotPassword() {
             if (ct == 1) {
 
                 char YN;
-                cout << "\nAccount has been found!\n";
-                cout << "\nYour password is: " << f_pass;
-
-                cout << "\nGo back to Login Section?\n";
-                cout << "\n'Y'/'y' = Yes ||'N'/'n' = No: ";
+                
+                Sleep(3000);
+                gotoxy(49, 13); cout << "Account has been found!";
+                gotoxy(49, 14);cout << "Your password is: " << f_pass;
+                gotoxy(49, 18);cout << "Go back to Login Section?";
+                gotoxy(49, 19);cout << "Type 'Y' or 'y' for YES";
+                gotoxy(49, 20);cout << "Type 'N' or 'n' for NO";
+                gotoxy(49, 24);cout << "Enter Choice: ";
                 cin >> YN;
 
                 if (YN == 'Y' || YN == 'y') {
                 main();
                 } 
                 else if (YN == 'N' || YN == 'n') {
-                    gotoxy(80, 24);
+                    gotoxy(70, 28);
                     cout << "Thank you for visiting!";
                 }
 
             } else {
-                cout << "\nAccount is not found.\n";
+                gotoxy(70, 19); cout << "Account not found.";
                 forgotPassword();
             }
 
@@ -465,7 +587,7 @@ void forgotPassword() {
         }
 
         default: {
-            cout << "\nInvalid Input! Please try again.\n";
+            cout << "Invalid Input! Please try again.\n";
             forgotPassword();
             break;
         }
@@ -475,7 +597,8 @@ void forgotPassword() {
 string getPassword() {
     string password;
     char ch;
-
+    
+    //To censor the password input 
     while ((ch = _getch()) != '\r') { 
         password += ch;
         cout << '*'; 
