@@ -906,15 +906,34 @@ void hangmanMainMenu() { // Main Menu for Hangman Game
     switch(hangChoice) {
         case 1: 
         system("cls");
-
         playHangmanGame();
-
         break;
 
         case 2:
         system("cls");
 
-        cout << "Guess the word correctly by answering questions. The player have six(6) lives";
+        gotoxy(50, 7); cout << "::";
+        gotoxy(50, 8); cout << "::";
+        gotoxy(50, 9); cout << "::";
+        gotoxy(52, 8); cout << "::::"; // Letter H
+        gotoxy(55, 7); cout << "::";
+        gotoxy(55, 8); cout << "::";
+        gotoxy(55, 9); cout << "::";
+
+        gotoxy(59, 7); cout << "::";
+        gotoxy(59, 8); cout << "::";
+        gotoxy(59, 9); cout << "::";
+        gotoxy(61, 7); cout << "::";
+        gotoxy(63, 7); cout << "::";
+        gotoxy(65, 7); cout << "::";   // Letter O
+        gotoxy(65, 8); cout << "::";
+        gotoxy(65, 9); cout << "::";
+        gotoxy(61, 9); cout << "::";
+        gotoxy(63, 9); cout << "::";
+
+        gotoxy(55, 12); cout << "Guess the word correctly by answering questions."; 
+        gotoxy(55, 13); cout << "The player have six(6) lives/attempts";
+        gotoxy(55, 14); cout << "Avoid forming the full hangman figure, or the game is over!";
 
         break;
 
@@ -933,6 +952,7 @@ void hangmanMainMenu() { // Main Menu for Hangman Game
 
 void hangmanFigure(int incorrectGuesses) {
     switch (incorrectGuesses) {
+
         case 0:
             cout << "  +---+\n";
             cout << "  |   |\n";
@@ -1026,10 +1046,10 @@ void playHangmanGame() {
         {"This header is part of the input/output library", "<iostream>"}
     };
 
-    // Seed the random number generator
+    // Random number generator
     srand(static_cast<unsigned int>(time(0)));
 
-    // Shuffle the questions to randomize the order
+    // Shuffles the questions to randomize the order
     random_shuffle(quiz.begin(), quiz.end());
 
     // Number of incorrect guesses allowed
@@ -1081,7 +1101,7 @@ void playHangmanGame() {
 
     system("cls");
 
-    // Final state of the stickman
+    // Final state of the hangman figure
     hangmanFigure(incorrectGuesses);
 
     // Show the final count of correct and incorrect answers
