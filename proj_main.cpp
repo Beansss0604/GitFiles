@@ -224,8 +224,8 @@ int MainMenu() {
     
     gotoxy(45, 9); cout << "       ------ Game-Code-On: Educational Coding Games ------";
     gotoxy(73, 12); cout << "Difficulty\n";
-    gotoxy(67, 14); cout << "1 - Hangman(Easy)\n";
-    gotoxy(67, 15); cout << "2 - Medium\n";
+    gotoxy(67, 14); cout << "1 - Easy\n";
+    gotoxy(67, 15); cout << "2 - Medium - Hangman\n";
     gotoxy(67, 16); cout << "3 - Hard\n";
     gotoxy(67, 17); cout << "0 - Return to Login Section\n";
     gotoxy(68, 21); cout << "Enter Choice: ";
@@ -235,16 +235,20 @@ int MainMenu() {
 
         case 1:
         system("cls");
-
-        hangmanMainMenu();
-
         break; 
+
+        case 2:
+        system("cls");
+        hangmanMainMenu();
+        break;
+
+        case 3:
+        system("cls");
+        break;
 
         case 0:
         system("cls");
-
         main();
-
         break;
     }
 
